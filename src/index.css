@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-tn-blue: #0860e8;
+  --color-tn-blue-hover: #0650c7;
+  --color-tn-navy: #061b3d;
+  --color-tn-blue-soft: #1d75f0;
+  --color-tn-bg: #f4f8ff;
+  --color-tn-card: #ffffff;
+  --color-tn-text: #101828;
+  --color-tn-muted: #667085;
+  --color-tn-border: #e5eaf2;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    background-color: #f4f8ff;
+    color: #101828;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@keyframes tn-pop {
+  0% {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes tn-check-draw {
+  0% {
+    stroke-dashoffset: 48;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes tn-pulse-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+.animate-tn-pop {
+  animation: tn-pop 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-tn-check {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: tn-check-draw 420ms cubic-bezier(0.16, 1, 0.3, 1) 140ms forwards;
+}
+
+.animate-tn-ring {
+  animation: tn-pulse-ring 1.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-tn-pop,
+  .animate-tn-check,
+  .animate-tn-ring {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}

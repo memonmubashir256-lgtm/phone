@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offline — TechNova</title>
+    <meta name="theme-color" content="#0860E8" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: #f4f8ff;
+        color: #101828;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+      .card {
+        max-width: 440px;
+        width: 100%;
+        background: #ffffff;
+        border: 1px solid #e5eaf2;
+        border-radius: 24px;
+        padding: 36px 28px;
+        text-align: center;
+        box-shadow: 0 20px 50px rgba(6, 27, 61, 0.08);
+      }
+      .badge {
+        width: 64px;
+        height: 64px;
+        border-radius: 18px;
+        background: #061b3d;
+        color: #ffffff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      h1 {
+        margin: 0 0 10px;
+        font-size: 24px;
+        font-weight: 700;
+        color: #061b3d;
+      }
+      p {
+        margin: 0 0 20px;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #667085;
+      }
+      .notice {
+        background: #f4f8ff;
+        border: 1px solid #e5eaf2;
+        border-radius: 14px;
+        padding: 12px 14px;
+        font-size: 13px;
+        color: #475467;
+        margin-bottom: 24px;
+      }
+      .actions {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+      }
+      button,
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
+        border-radius: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        border: none;
+      }
+      .primary {
+        background: #0860e8;
+        color: #ffffff;
+      }
+      .secondary {
+        background: #eef4ff;
+        color: #0860e8;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <div class="badge" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="2" y1="2" x2="22" y2="22"></line>
+          <path d="M8.5 16.5a5 5 0 0 1 7 0"></path>
+          <path d="M2 8.82a15 15 0 0 1 4.17-2.65"></path>
+          <path d="M10.66 5c4.01-.36 8.14.9 11.34 3.76"></path>
+          <path d="M16.85 11.25a10 10 0 0 1 2.22 1.68"></path>
+          <path d="M5 13a10 10 0 0 1 5.24-2.76"></path>
+          <line x1="12" y1="20" x2="12.01" y2="20"></line>
+        </svg>
+      </div>
+      <h1>You are currently offline</h1>
+      <p>
+        TechNova cannot reach the live store right now. Previously visited product pages remain available from your device cache.
+      </p>
+      <div class="notice">
+        Live inventory checks, order tracking updates, and checkout require an active internet connection.
+      </div>
+      <div class="actions">
+        <button class="primary" onclick="window.location.reload()">Try Again</button>
+        <a class="secondary" href="/">Go Home</a>
+      </div>
+    </main>
+  </body>
+</html>
